@@ -1,0 +1,37 @@
+<div class="meteo-container">	
+	<div class="meteo-item">
+		<div class="units-item">
+			<button (click)="toogleUnits()" class="meteo-units">
+				{{ showCelcius ? '°F' : '°C' }}
+			</button>
+		</div>
+
+		<h2>{{ weatherData?.location?.name }}</h2>
+		<img [src]="weatherData?.current?.condition?.icon" alt="" class="meteo-icon">
+		<p class="meteo-subtitle">{{ weatherData?.current?.condition?.text }}</p>
+		<p class="meteo-temperature">Temperature: {{ getTemperature() }} °{{ showCelcius ? 'C' : 'F' }}</p>
+		<p class="meteo-g">Humidity: {{ weatherData?.current?.humidity }}%</p>
+		<p class="meteo-g">Precipitation: {{ weatherData?.current?.precip_mm }} mm</p>
+		<p class="meteo-g">Wind: {{ weatherData?.current?.wind_kph }} km/h {{ weatherData?.current?.wind_dir }} ({{ weatherData?.current?.wind_degree }}°)</p>
+		<p class="meteo-g">Atmospheric Pressure: {{ weatherData?.current?.pressure_mb }} hPa</p>
+		<p class="meteo-date">Last Update: {{ weatherData?.current?.last_updated }}</p>
+	</div>
+</div>
+
+<div>
+	<h2 style="text-align: center;">Forecast</h2>
+	<div *ngFor="let data of weatherData?.forecast?.forecastday" class="forecast-container">
+		<div *ngFor="let h of data?.hour" class="forecast-item">
+			<div class="forecast-title">
+				<img [src]="h?.condition?.icon" alt="" class="forecast-icon">
+				<p>{{ h?.condition?.text }}</p>
+			</div>
+			<p class="forecast-temperature">Temperature: {{ showCelcius ? h?.temp_c : h?.temp_f }} °{{ showCelcius ? 'C' : 'F' }}</p>
+			<p class="meteo-g">Rain: {{ h?.chance_of_rain }}%</p>
+			<p class="meteo-g">Precipitation: {{ h?.precip_mm }} mm</p>
+			<p class="meteo-g">Wind: {{ h?.wind_kph }} km/h {{ h?.wind_dir }} ({{ h?.wind_degree }}°)</p>
+			<p class="meteo-g">Atmospheric Pressure: {{ h?.pressure_mb }} hPa</p>
+			<p class="meteo-date">Last Update: {{ h?.time }}</p>
+		</div>
+	</div>
+</div>

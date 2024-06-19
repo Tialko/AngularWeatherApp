@@ -1,0 +1,20 @@
+<nav>
+	<ul class="navigation">
+		<li><a (click)="toogleLocation()" [class]="!showLocation ? 'active' : ''">Home</a></li>
+		<li><a (click)="toogleLocation()" [class]="showLocation ? 'active' : ''">Geolocation</a></li>
+	</ul>
+</nav>
+
+<div class="search-container">
+	<form (submit)="searchWeather($event, city.value)">
+		<label for="cityName">Search for a City</label>
+		<input type="text" name="cityName" placeholder="Choose a city name" #city>
+		<button class="primary" type="submit">Search</button>
+	</form>
+</div>
+
+<div class="weather-container" *ngIf="weatherData && !showLocation">
+	<weather *ngIf="weatherData && !showLocation" [weatherData]="weatherData"></weather>
+</div>
+
+<geolocation *ngIf="weatherData && showLocation" [geolocationData]="weatherData?.location"></geolocation>

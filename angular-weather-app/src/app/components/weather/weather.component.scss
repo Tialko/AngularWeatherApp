@@ -1,0 +1,60 @@
+.meteo-container {
+	text-align: center;
+
+	.meteo-subtitle {
+		font-weight: bold;
+		margin: 10px;
+	}
+
+	.meteo-item {
+		display: inline-block;
+		margin: 10px;
+		padding: 10px;
+		border: 1px solid #ddd;
+		border-radius: 5px;
+		width: 250px;
+
+		.units-item {
+			display: flex;
+			justify-content: flex-end;
+			
+			.meteo-units {
+				padding: 10px 20px;
+				background-color: #04AA6D;
+				color: white;
+				border: none;
+				border-radius: 5px;
+				cursor: pointer;
+			}
+		}
+	}
+
+	.meteo-date {
+		font-weight: bold;
+		margin-bottom: 5px;
+	}
+
+	.meteo-temperature {
+		font-size: 1.5em;
+		margin-bottom: 5px;
+	}
+
+	.meteo-g {
+		font-style: italic;
+	}
+}
+
+.forecast-container {
+	display: flex;
+    overflow: auto;
+    width: 100%;
+	font-size: 10px;
+
+	.forecast-item {
+		min-width: 175px;
+
+		.forecast-title {
+			display: flex;
+		}
+	}
+}

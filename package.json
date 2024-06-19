@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "wft-geodb-angular-client": "^6.0.2"
+  }
+}
