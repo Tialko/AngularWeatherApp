@@ -18,7 +18,8 @@ $ ng serve
 
 #taking into account
 ```
-Api GeoLocalizaçao : https://rapidapi.com/wirefreethought/api/geodb-cities/ incorrecta
+Dada a api GeoLocalizaçao : https://rapidapi.com/wirefreethought/api/geodb-cities/ esta está incorrecta ou não a consegui encontrar
 
-Encontrada https://rapidapi.com/wirefreethought/api/geodb-cities 
+Encontrada https://www.npmjs.com/package/wft-geodb-angular-client ao tentar instalar, apresenta incompatibilidades com versão actual do angular/cli.
+Depois de verificar o objecto obtido pelo https://www.weatherapi.com/, há alguns elementos de geolocalização, optando assim por mostrar apenas estes elementos trazidos pela api weather
 ```
